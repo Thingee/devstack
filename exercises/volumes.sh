@@ -146,7 +146,7 @@ if [[ -n "`cinder list | grep $VOL_NAME | head -1 | get_field 2`" ]]; then
 fi
 
 # Create a new volume
-cinder create --display_name $VOL_NAME --display_description "test volume: $VOL_NAME" $DEFAULT_VOLUME_SIZE
+cinder create --name $VOL_NAME --description "test volume: $VOL_NAME" $DEFAULT_VOLUME_SIZE
 if [[ $? != 0 ]]; then
     echo "Failure creating volume $VOL_NAME"
     exit 1
